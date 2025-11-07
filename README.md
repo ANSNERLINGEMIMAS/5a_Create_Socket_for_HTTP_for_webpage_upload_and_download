@@ -116,7 +116,6 @@ index.html
 
 </body>
 </html>
-
 ```
 
 ## OUTPUT
@@ -124,7 +123,7 @@ index.html
 <img width="978" height="409" alt="Screenshot 2025-11-04 221723" src="https://github.com/user-attachments/assets/4aec5de9-51b2-4756-afb0-ebdf34dc7870" />
 
 
-<img width="1916" height="1030" alt="Screenshot 2025-11-04 221808" src="https://github.com/user-attachments/assets/4b715550-b4ce-478c-b401-6ff2794f84cb" />
+<img width="1132" height="210" alt="Screenshot 2025-11-07 225543" src="https://github.com/user-attachments/assets/57caf8b3-437b-41db-abdc-8257b474192c" />
 
 
 
