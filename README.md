@@ -18,6 +18,7 @@ To write a PYTHON program for socket for HTTP for web page upload and download
 ## Program 
 ```
 import socket
+
 def send_request(host, port, request):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
@@ -29,21 +30,27 @@ def upload_file(host, port, filename):
     with open(filename, 'rb') as file:
         file_data = file.read()
         content_length = len(file_data)
-        request = f"POST /upload HTTP/1.1\r\nHost: {host}\r\nContent-Length: {content_length}\r\n\r\n"
-        request += file_data.decode()
+        request = (
+            f"POST /upload HTTP/1.1\r\n"
+            f"Host: {host}\r\n"
+            f"Content-Length: {content_length}\r\n"
+            f"\r\n"
+        )
+        # send the request
         response = send_request(host, port, request)
     return response
 
 def download_file(host, port, filename):
     request = f"GET /{filename} HTTP/1.1\r\nHost: {host}\r\n\r\n"
     response = send_request(host, port, request)
+
     # Assuming the response contains the file content after the headers
     file_content = response.split('\r\n\r\n', 1)[1]
     with open(filename, 'wb') as file:
         file.write(file_content.encode())
 
-if _name_ == "_main_":
-    host = 'example.com'
+if __name__ == "__main__":
+    host = 'example.com'   # You can use any test server
     port = 80
 
     # Upload file
@@ -57,7 +64,7 @@ if _name_ == "_main_":
 
 ## OUTPUT
 
-<img width="1480" height="690" alt="Screenshot 2025-11-11 090556" src="https://github.com/user-attachments/assets/520746ff-32ac-4d93-8fa9-2a331ba55832" />
+<img width="821" height="405" alt="Screenshot 2025-11-13 153056" src="https://github.com/user-attachments/assets/89c48914-60ab-406e-8d53-c01d6df607b4" />
 
 
 
